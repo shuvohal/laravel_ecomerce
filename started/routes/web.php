@@ -2,6 +2,7 @@
 use App\Http\Controllers\Frontend\Frontendcontroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,10 @@ Route::get('/admin/login', [AdminController::class, 'adminlogin']);
 
 Route::post('/admin/login', [AdminController::class, 'adminloginform'])->name('admin.login');
 
-// simple dashboard page so successful login has somewhere to redirect
-Route::get('/admin/dashboard', function () {
-	return '<h2 style="padding:40px; font-family: sans-serif;">Welcome to the admin dashboard (placeholder)</h2>';
-})->name('admin.dashboard');
+// Admin dashboard route (handled by controller)
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+// Category Routes
+Route::get('/category/add', [CategoryController::class, 'addCategory'])->name('category.add');
+Route::post('/category/store', [CategoryController::class, 'storeCategory'])->name('category.store');
+Route::get('/category/manage', [CategoryController::class, 'manageCategory'])->name('category.manage');
