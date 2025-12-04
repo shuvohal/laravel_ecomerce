@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class Frontendcontroller extends Controller
 {
     public function index()
     {
-        return view('frontend.home.index');
+        $categories = Category::orderBy('id', 'desc')->where('status', 1)->get();
+        return view('frontend.home.index', compact('categories'));
     }
 }

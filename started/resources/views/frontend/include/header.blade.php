@@ -5,11 +5,10 @@
             <a href="#" class="text-3xl font-bold text-gray-800">Shu</a>
             <div class="hidden md:block">
                 <ul id="navbar" class="flex space-x-6">
-                    <li><a class="active hover:text-blue-500" href="index.html">Home</a></li>
-                    <li><a class="hover:text-blue-500" href="shop.html">Shop</a></li>
-                    <li><a class="hover:text-blue-500" href="blog.html">Blog</a></li>
-                    <li><a class="hover:text-blue-500" href="about.html">About</a></li>
-                    <li><a class="hover:text-blue-500" href="contact.html">Contact</a></li>
+                    <li><a class="active hover:text-blue-500" href="{{ url('/')}}">Home</a></li>
+                   @foreach($categories as $category)
+                    <li><a  href="#">{{ $category->name }}</a></li>
+                     @endforeach
                     <li id="lg-bag"><a href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
                 </ul>
             </div>
