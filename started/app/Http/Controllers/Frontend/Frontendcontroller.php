@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Product;
 
 class Frontendcontroller extends Controller
 {
     public function index()
     {
         $categories = Category::orderBy('id', 'desc')->where('status', 1)->get();
-        return view('frontend.home.index', compact('categories'));
+        $products =  Product::with('category','brand')->where('status',1)->orderBy('created_at','desc')->get();
+        return view('frontend.home.index', compact('categories', 'products'));
     }
 }

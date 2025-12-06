@@ -21,3 +21,21 @@
 
     <!-- Page level custom scripts -->
     <script src="{{asset('/backend/assets/')}}/js/demo/datatables-demo.js"></script>
+
+<!-- JQuery -->
+
+
+<!-- Bootstrap JS -->
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
+<!-- Summernote JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.js"></script>
+
+
+<script type="text/javascript">
+    
+        $('#long_discription').summernote({
+            height: 400
+        
+    });
+</script>

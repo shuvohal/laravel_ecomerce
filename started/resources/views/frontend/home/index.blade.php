@@ -181,12 +181,17 @@ Home - Shu's Ecommerce
             <h2 class="text-3xl font-bold">New Arrivals</h2>
             <p class="mt-2 text-gray-600">Fresh styles just for you</p>
             <div class="pro-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
+
+            @foreach($products as $product)
+
+
+        
                 <!-- Product 1 -->
                 <div class="pro bg-gray-50 rounded shadow overflow-hidden transition-transform hover:scale-105">
-                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Product" class="w-full">
+                    <img src="{{asset('images/product/'.$product->image) }}" alt="Product" class="w-full">
                     <div class="des p-4 text-center">
-                        <span class="text-gray-500">H&M</span>
-                        <h5 class="font-semibold mt-1">Striped Cotton Shirt</h5>
+                        <span class="text-gray-500">{{$product->color}}</span>
+                        <h5 class="font-semibold mt-1">{{$product->name}}</h5>
                         <div class="star flex justify-center mt-2">
                             <i class="fas fa-star text-yellow-400"></i>
                             <i class="fas fa-star text-yellow-400"></i>
@@ -194,64 +199,20 @@ Home - Shu's Ecommerce
                             <i class="fas fa-star text-yellow-400"></i>
                             <i class="fas fa-star text-yellow-400"></i>
                         </div>
-                        <h4 class="mt-2 font-bold">$39</h4>
+                        <h4 class="mt-2 font-bold">{{$product->price}}</h4>
                     </div>
                     <a href="#" class="block p-4 bg-blue-600 text-white hover:bg-blue-700 transition-colors"><i class="fas fa-shopping-cart cart mr-2"></i>Add to Cart</a>
                 </div>
+                @endforeach
                 
                 <!-- Product 2 -->
-                <div class="pro bg-gray-50 rounded shadow overflow-hidden transition-transform hover:scale-105">
-                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Product" class="w-full">
-                    <div class="des p-4 text-center">
-                        <span class="text-gray-500">Puma</span>
-                        <h5 class="font-semibold mt-1">Training Joggers</h5>
-                        <div class="star flex justify-center mt-2">
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                        </div>
-                        <h4 class="mt-2 font-bold">$55</h4>
-                    </div>
-                    <a href="#" class="block p-4 bg-blue-600 text-white hover:bg-blue-700 transition-colors"><i class="fas fa-shopping-cart cart mr-2"></i>Add to Cart</a>
-                </div>
+               
                 
                 <!-- Product 3 -->
-                <div class="pro bg-gray-50 rounded shadow overflow-hidden transition-transform hover:scale-105">
-                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Product" class="w-full">
-                    <div class="des p-4 text-center">
-                        <span class="text-gray-500">Uniqlo</span>
-                        <h5 class="font-semibold mt-1">Lightweight Jacket</h5>
-                        <div class="star flex justify-center mt-2">
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                        </div>
-                        <h4 class="mt-2 font-bold">$89</h4>
-                    </div>
-                    <a href="#" class="block p-4 bg-blue-600 text-white hover:bg-blue-700 transition-colors"><i class="fas fa-shopping-cart cart mr-2"></i>Add to Cart</a>
-                </div>
+               
                 
                 <!-- Product 4 -->
-                <div class="pro bg-gray-50 rounded shadow overflow-hidden transition-transform hover:scale-105">
-                    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Product" class="w-full">
-                    <div class="des p-4 text-center">
-                        <span class="text-gray-500">Converse</span>
-                        <h5 class="font-semibold mt-1">Classic Sneakers</h5>
-                        <div class="star flex justify-center mt-2">
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                        </div>
-                        <h4 class="mt-2 font-bold">$70</h4>
-                    </div>
-                    <a href="#" class="block p-4 bg-blue-600 text-white hover:bg-blue-700 transition-colors"><i class="fas fa-shopping-cart cart mr-2"></i>Add to Cart</a>
-                </div>
+              
             </div>
         </div>
     </section>

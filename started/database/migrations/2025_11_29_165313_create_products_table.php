@@ -20,8 +20,8 @@ return new class extends Migration
             $table->float('price');
             $table->float('discounted_price')->nullable();
             $table->unsignedInteger('qty');
-            $table->text('description');
-            $table->longText('long_description');
+           $table->text('short_discription');
+           $table->longText('long_discription');
             $table->text('color');
             $table->text('size');
             $table->string('image');
